@@ -1,0 +1,13 @@
+from twilio.rest import Client 
+ 
+account_sid = 'AC98b55b6e9a9aaabc46df27e49c19c55d' 
+auth_token = '1e327b48501f2b995699641c4bfd18c1' 
+client = Client(account_sid, auth_token) 
+ 
+message = client.messages.create(  
+                              messaging_service_sid='MGf5bbdd0a0b766d6ff3f9f4dbff5db3de', 
+                              body='Test',      
+                              to='+14109725608' 
+                          ) 
+ 
+print(message.sid)
